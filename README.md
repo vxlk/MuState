@@ -1,0 +1,2 @@
+# MuState
+Generative Music Application
