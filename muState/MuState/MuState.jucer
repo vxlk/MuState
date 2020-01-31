@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="cLMWCh" name="MuState" projectType="guiapp" jucerVersion="5.4.4"
+              cppLanguageStandard="17" headerPath="C:\Users\small\Desktop\muState\muState\MuState\Source\Include;&#10;C:\Users\small\Desktop\muState\Thirdparty\tracktion_engine\modules\tracktion_engine;"
+              userNotes="you will have to set your own paths&#10;todo: find relative path for header search"
+              bundleIdentifier="muState.alpha">
+  <MAINGROUP id="HskP4I" name="MuState">
+    <GROUP id="{331CFCEE-0B1E-4394-B0A5-2E00AC4C768F}" name="Source">
+      <GROUP id="{4060746C-8FD5-A659-83F2-16036BB32C6D}" name="Include">
+        <GROUP id="{7447C615-4890-03DD-58AB-1E15D848007D}" name="Interfaces"/>
+      </GROUP>
+      <GROUP id="{6B090B2B-E2B3-BA1C-06F5-C11BB179A895}" name="Src"/>
+      <FILE id="kff6Tc" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="TVpz7I" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+      <FILE id="AtxGfL" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <VS2019 targetFolder="Builds/VisualStudio2019">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_core" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_events" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+      </MODULEPATHS>
+    </VS2019>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <WINDOWS/>
+  </LIVE_SETTINGS>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+</JUCERPROJECT>

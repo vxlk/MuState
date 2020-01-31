@@ -1,0 +1,6 @@
+*.pdb
+*.ilk
+*.exe
+*.tlog
+/muState/MuState/Builds/VisualStudio2019/x64/
+/muState/MuState/Builds/VisualStudio2019/.vs/
