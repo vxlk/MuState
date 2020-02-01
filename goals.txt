@@ -1,0 +1,4 @@
+feb 1 : implement interfaces
+        hold a plugin  -
+        make a sound   - make engine
+        take midi input-

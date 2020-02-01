@@ -7,10 +7,18 @@
   <MAINGROUP id="HskP4I" name="MuState">
     <GROUP id="{331CFCEE-0B1E-4394-B0A5-2E00AC4C768F}" name="Source">
       <GROUP id="{4060746C-8FD5-A659-83F2-16036BB32C6D}" name="Include">
-        <GROUP id="{7447C615-4890-03DD-58AB-1E15D848007D}" name="Interfaces"/>
+        <GROUP id="{7447C615-4890-03DD-58AB-1E15D848007D}" name="Interfaces">
+          <FILE id="hWlCrY" name="IObject.hpp" compile="0" resource="0" file="Source/Include/Interfaces/IObject.hpp"/>
+          <FILE id="g1jLKK" name="IState.hpp" compile="0" resource="0" file="Source/Include/Interfaces/IState.hpp"/>
+          <FILE id="y6Rvg1" name="ITool.hpp" compile="0" resource="0" file="Source/Include/Interfaces/ITool.hpp"/>
+        </GROUP>
+        <FILE id="eAAXPH" name="Engine.hpp" compile="0" resource="0" file="Source/Include/Engine.hpp"/>
+        <FILE id="zQiw52" name="Frame.hpp" compile="0" resource="0" file="Source/Include/Frame.hpp"/>
+        <FILE id="UQV6KZ" name="Tool.hpp" compile="0" resource="0" file="Source/Include/Tool.hpp"/>
       </GROUP>
       <GROUP id="{6B090B2B-E2B3-BA1C-06F5-C11BB179A895}" name="Src"/>
-      <FILE id="kff6Tc" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="kff6Tc" name="MainComponent.hpp" compile="0" resource="0"
+            file="Source/MainComponent.hpp"/>
       <FILE id="TVpz7I" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
       <FILE id="AtxGfL" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>

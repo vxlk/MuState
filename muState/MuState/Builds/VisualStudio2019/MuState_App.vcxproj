@@ -1907,7 +1907,13 @@
     <ClCompile Include="..\..\JuceLibraryCode\include_juce_opengl.cpp"/>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\MainComponent.h"/>
+    <ClInclude Include="..\..\Source\Include\Interfaces\IObject.hpp"/>
+    <ClInclude Include="..\..\Source\Include\Interfaces\IState.hpp"/>
+    <ClInclude Include="..\..\Source\Include\Interfaces\ITool.hpp"/>
+    <ClInclude Include="..\..\Source\Include\Engine.hpp"/>
+    <ClInclude Include="..\..\Source\Include\Frame.hpp"/>
+    <ClInclude Include="..\..\Source\Include\Tool.hpp"/>
+    <ClInclude Include="..\..\Source\MainComponent.hpp"/>
     <ClInclude Include="..\..\..\..\Thirdparty\tracktion_engine\modules\juce\modules\juce_audio_basics\audio_play_head\juce_AudioPlayHead.h"/>
     <ClInclude Include="..\..\..\..\Thirdparty\tracktion_engine\modules\juce\modules\juce_audio_basics\buffers\juce_AudioChannelSet.h"/>
     <ClInclude Include="..\..\..\..\Thirdparty\tracktion_engine\modules\juce\modules\juce_audio_basics\buffers\juce_AudioDataConverters.h"/>
