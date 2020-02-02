@@ -36,4 +36,6 @@ public:
 	virtual const std::string& GetName() const noexcept { return "Object"; }
 
 	virtual IObject* CastToObject() noexcept			{ return dynamic_cast<IObject*>(this); }
+
+	virtual std::string GetLog() = 0;
 };
