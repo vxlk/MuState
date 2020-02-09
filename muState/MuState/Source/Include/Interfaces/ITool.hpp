@@ -12,6 +12,7 @@
 
 #include <Interfaces/IObject.hpp>
 #include <Interfaces/IState.hpp>
+#include <vector>
 
 // The Tool Interface
 

@@ -9,3 +9,12 @@
 */
 
 #pragma once
+
+#include <Interfaces/ITool.hpp>
+
+// The audio engine
+
+class Engine {
+
+	objectList_t m_ActiveObjects;
+};

@@ -10,13 +10,17 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "MainComponent.hpp"
+#include <Engine.hpp>
 
 //==============================================================================
 class MuStateApplication  : public JUCEApplication
 {
 public:
     //==============================================================================
-    MuStateApplication() {}
+    MuStateApplication() {
+		// construct the engine that this window owns
+		m_pEngine = std::make_unique<Engine>();
+	}
 
     const String getApplicationName() override       { return ProjectInfo::projectName; }
     const String getApplicationVersion() override    { return ProjectInfo::versionString; }
@@ -35,6 +39,7 @@ public:
         // Add your application's shutdown code here..
 
         mainWindow = nullptr; // (deletes our window)
+		m_pEngine = nullptr;
     }
 
     //==============================================================================
@@ -99,6 +104,7 @@ public:
 
 private:
     std::unique_ptr<MainWindow> mainWindow;
+	std::unique_ptr<Engine>		m_pEngine;
 };
 
 //==============================================================================

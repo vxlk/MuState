@@ -39,3 +39,5 @@ public:
 
 	virtual std::string GetLog() = 0;
 };
+
+using objectList_t = std::vector<std::unique_ptr<IObject>>;

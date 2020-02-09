@@ -42,7 +42,7 @@
 //		   in time, and an object's state may dictate how it will
 //		   transition into the next state
 
-class IState {
+class IState : public IObject {
 protected:
 	bool m_bInTransition;
 
