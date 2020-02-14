@@ -10,6 +10,8 @@
 
 #pragma once
 
+#include <Frame.hpp>
+
 // The State Interface
 
 // A State is a representation of parameter
@@ -45,7 +47,7 @@
 class IState : public IObject {
 protected:
 	bool m_bInTransition;
-
+	std::vector<Frame> m_Frames;
 public:
 	virtual bool   CanTransition()  = 0;
 	virtual void   Transition()		= 0;

@@ -16,5 +16,14 @@
 
 class Engine {
 
+	// eventually this will be contained in a repository
+	// I want a transaction system to make sure multiple
+	// objects dont modify other objects concurrently
 	objectList_t m_ActiveObjects;
+	AudioDeviceManager m_deviceManager;
+
+
+public:
+	objectPtr_t AddObject(IObject *);
+
 };

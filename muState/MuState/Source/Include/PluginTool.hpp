@@ -12,7 +12,8 @@ class PluginTool : public Tool, public juce::AudioProcessor {
 	~PluginTool() override = default;
 
 	// IObject override
-	virtual const std::string& GetName() const noexcept override { return static_cast<const char *>(plugin->getName().toUTF8()); }
+	virtual const std::string& GetName() const noexcept override 
+							   { return static_cast<const char *>(plugin->getName().toUTF8()); }
 	virtual std::string GetLog() override;
 
 	PluginTool(AudioPluginInstance* processorToUse)
@@ -21,19 +22,19 @@ class PluginTool : public Tool, public juce::AudioProcessor {
 	{}
 
 	//==============================================================================
-	const String getName() const override { return plugin->getName(); }
-	bool canAddBus(bool inputBus) const override { return plugin->canAddBus(inputBus); }
-	bool canRemoveBus(bool inputBus) const override { return plugin->canRemoveBus(inputBus); }
+	const String getName() const override					{ return plugin->getName(); }
+	bool canAddBus(bool inputBus) const override			{ return plugin->canAddBus(inputBus); }
+	bool canRemoveBus(bool inputBus) const override			{ return plugin->canRemoveBus(inputBus); }
 	bool supportsDoublePrecisionProcessing() const override { return plugin->supportsDoublePrecisionProcessing(); }
-	double getTailLengthSeconds() const override { return plugin->getTailLengthSeconds(); }
-	bool acceptsMidi() const override { return plugin->acceptsMidi(); }
-	bool producesMidi() const override { return plugin->producesMidi(); }
-	bool supportsMPE() const override { return plugin->supportsMPE(); }
-	bool isMidiEffect() const override { return plugin->isMidiEffect(); }
-	void reset() override { plugin->reset(); }
-	AudioProcessorEditor* createEditor() override { return plugin->createEditor(); }
-	bool hasEditor() const override { return plugin->hasEditor(); }
-	int getNumParameters() override { return plugin->getNumParameters(); }
+	double getTailLengthSeconds() const override			{ return plugin->getTailLengthSeconds(); }
+	bool acceptsMidi() const override						{ return plugin->acceptsMidi(); }
+	bool producesMidi() const override						{ return plugin->producesMidi(); }
+	bool supportsMPE() const override						{ return plugin->supportsMPE(); }
+	bool isMidiEffect() const override						{ return plugin->isMidiEffect(); }
+	void reset() override									{ plugin->reset(); }
+	AudioProcessorEditor* createEditor() override			{ return plugin->createEditor(); }
+	bool hasEditor() const override							{ return plugin->hasEditor(); }
+	int getNumParameters() override							{ return plugin->getNumParameters(); }
 	const String getParameterName(int parameterIndex) override { return plugin->getParameterName(parameterIndex); }
 	String getParameterID(int index) override { return plugin->getParameterID(index); }
 	float getParameter(int parameterIndex) override { return plugin->getParameter(parameterIndex); }

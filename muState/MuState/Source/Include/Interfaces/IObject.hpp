@@ -40,4 +40,10 @@ public:
 	virtual std::string GetLog() = 0;
 };
 
-using objectList_t = std::vector<std::unique_ptr<IObject>>;
+// syntactic sugar around common types of object wrappers
+
+using objectPtr_t = std::shared_ptr<const IObject>;
+using objectPtrMutable_t = std::shared_ptr<IObject>;
+
+using objectList_t = std::vector<objectPtr_t>;
+using objectListMutable_t = std::vector<objectPtrMutable_t>;

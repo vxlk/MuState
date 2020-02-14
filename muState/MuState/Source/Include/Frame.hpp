@@ -10,7 +10,7 @@
 
 #pragma once
 
-// A frame represents a configuration of a tool in a specific instance
+// A frame represents a configuration of a tool in a specific slice
 // of time
 
 class Frame {

@@ -27,6 +27,10 @@ MainComponent::MainComponent()
         // Specify the number of input and output channels that we want to open
         setAudioChannels (2, 2);
     }
+
+	loadPluginButton = std::make_unique<TextButton>("Test");
+	loadPluginButton->setTopLeftPosition({ 200, 200 });
+	addAndMakeVisible(loadPluginButton.get());
 }
 
 MainComponent::~MainComponent()
@@ -72,7 +76,7 @@ void MainComponent::paint (Graphics& g)
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (ResizableWindow::backgroundColourId));
 
-    // You can add your drawing code here!
+    // You can add your drawing code here
 }
 
 void MainComponent::resized()
