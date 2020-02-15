@@ -8,6 +8,7 @@
     <GROUP id="{331CFCEE-0B1E-4394-B0A5-2E00AC4C768F}" name="Source">
       <GROUP id="{4060746C-8FD5-A659-83F2-16036BB32C6D}" name="Include">
         <GROUP id="{7447C615-4890-03DD-58AB-1E15D848007D}" name="Interfaces">
+          <FILE id="Q87Hwf" name="IModulator.hpp" compile="0" resource="0" file="Source/Include/Interfaces/IModulator.hpp"/>
           <FILE id="hWlCrY" name="IObject.hpp" compile="0" resource="0" file="Source/Include/Interfaces/IObject.hpp"/>
           <FILE id="g1jLKK" name="IState.hpp" compile="0" resource="0" file="Source/Include/Interfaces/IState.hpp"/>
           <FILE id="y6Rvg1" name="ITool.hpp" compile="0" resource="0" file="Source/Include/Interfaces/ITool.hpp"/>

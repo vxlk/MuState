@@ -11,6 +11,9 @@
 #pragma once
 
 #include <Frame.hpp>
+#include <Interfaces/IObject.hpp>
+
+#include <unordered_map>
 
 // The State Interface
 
@@ -45,12 +48,36 @@
 //		   transition into the next state
 
 class IState : public IObject {
+public:
+	virtual bool   CanTransition()  = 0;
+	virtual void   Transition()		= 0;
+};
+
+// should move these to an implementation file
+
+// the different ways a state can be compared to one another
+class StateTimeComparators {
+	// states are compared
+	time_t m_timeOfCreation;
+};
+
+class StateLikenessComparators {
+	Frame m_frameToCompareAgainst;
+};
+
+class State : public IState {
 protected:
 	bool m_bInTransition;
 	std::vector<Frame> m_Frames;
 public:
-	virtual bool   CanTransition()  = 0;
-	virtual void   Transition()		= 0;
 
-	constexpr bool IsInTransition() const noexcept { return m_bInTransition; }
+	friend class StateOperators;
+
+	virtual bool   CanTransition() override;
+	virtual void   Transition()    override;
+
+	constexpr bool IsInTransition() noexcept { return m_bInTransition; }
 };
+
+using stateList_t = std::vector<std::shared_ptr<const IState>>;
+using stateMap_t = std::unordered_map<std::shared_ptr<const IState>>;

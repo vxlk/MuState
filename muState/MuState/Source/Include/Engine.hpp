@@ -21,9 +21,14 @@ class Engine {
 	// objects dont modify other objects concurrently
 	objectList_t m_ActiveObjects;
 	AudioDeviceManager m_deviceManager;
-
+	AudioPluginFormatManager m_formatManager;
 
 public:
+
 	objectPtr_t AddObject(IObject *);
+
+	objectPtr_t AddPlugin(const char *filePath);
+
+	objectPtr_t AddAudio(const char *filePath);
 
 };
