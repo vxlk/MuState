@@ -7,7 +7,7 @@
 */
 
 #include "MainComponent.hpp"
-
+#include <PluginTool.hpp>
 //==============================================================================
 MainComponent::MainComponent()
 {
@@ -30,7 +30,17 @@ MainComponent::MainComponent()
 
 	loadPluginButton = std::make_unique<TextButton>("Test");
 	loadPluginButton->setTopLeftPosition({ 200, 200 });
+	loadPluginButton->setBounds(10, 70, 90, 20);
+	loadPluginButton->onClick = [&, this]() {
+		//m_pEngine.AddObject(new PluginTool());
+	}
+	loadPluginButton->addListener(this);
 	addAndMakeVisible(loadPluginButton.get());
+
+	m_pSlider = std::make_unique<Slider>();
+	addAndMakeVisible(m_pSlider.get());
+
+	this->toFront(true);
 }
 
 MainComponent::~MainComponent()

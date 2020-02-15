@@ -28,7 +28,8 @@ public:
     This component lives inside our window, and this is where you should put all
     your controls and content.
 */
-class MainComponent   : public AudioAppComponent
+class MainComponent   : public AudioAppComponent,
+						public Button::Listener
 {
 public:
     //==============================================================================
@@ -44,10 +45,14 @@ public:
     void paint (Graphics& g) override;
     void resized() override;
 
+	// listener
+	void buttonClicked(Button *) override { this->loadPluginButton->onClick(); }
+
 private:
     //==============================================================================
     // Your private member variables go here...
 	std::unique_ptr<TextButton> loadPluginButton;
+	std::unique_ptr<Slider> m_pSlider;
 
 	// eventually this will be wrapped by a controller
 	Engine m_pEngine;
