@@ -11,6 +11,9 @@
 #pragma once
 
 #include <Interfaces/ITool.hpp>
+#include <Interfaces/IModulator.hpp>
+#include <tracktion_engine.h>
+#include <JuceHeader.h>
 
 // The audio engine
 
@@ -22,8 +25,12 @@ class Engine {
 	objectList_t m_ActiveObjects;
 	AudioDeviceManager m_deviceManager;
 	AudioPluginFormatManager m_formatManager;
-
+	std::vector <std::shared_ptr<IModulator>> m_Modulators;
+	unsigned int m_projectID = 0; //to be set from xml/preset file eventually
 public:
+
+	// expose tracktion functionality
+	tracktion_engine::Engine& TracktionEngine() { return tracktion_engine::Engine::getInstance(); }
 
 	objectPtr_t AddObject(IObject *);
 
@@ -31,4 +38,11 @@ public:
 
 	objectPtr_t AddAudio(const char *filePath);
 
+	IState* DefaultState(ID);
+
 };
+
+inline objectPtr_t Engine::AddObject(IObject* objectToAdd) {
+	m_ActiveObjects.emplace_back(objectToAdd);
+	return m_ActiveObjects.back();
+}

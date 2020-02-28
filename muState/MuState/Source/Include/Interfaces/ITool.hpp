@@ -16,15 +16,15 @@
 
 // The Tool Interface
 
-// A tool representing a sound generator
+// A tool representing a sound generator or modifier
 // A tool contains a state
 // The state owned by the tool dictates how the object that
 // the tool is wrapping (vst plugin for example) made the sound
 // it made at that point in the audio buffer
 // A tool can be a plugin (generator/effect), audio file etc
 
-// \Brief: A tool creates/modifies sound in the sound buffer using States 
-//		  (see IState)
+// \Brief: A tool creates/modifies sound in the sound buffer
+//		   and plays them in the buffer using States (see IState)
 
 class ITool : public IObject {
 public:

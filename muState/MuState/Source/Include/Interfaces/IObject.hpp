@@ -13,6 +13,10 @@
 #include <string>
 #include <memory>
 #include <vector>
+//#include <tracktion_engine/project/tracktion_ProjectItemID.h>
+
+// silence error, we dont care about adding to the global header
+#define JUCE_GLOBAL_MODULE_SETTINGS_INCLUDED
 
 // The Object Interface
 
@@ -31,14 +35,26 @@
 ///todo: it will become more clear to me when i start implementing what all this needs to hold
 /// the idea right now is to be able to up-cast to a common base
 
-class IObject {
+using ID = int;
+
+class IObject : public std::enable_shared_from_this<IObject> {
 public:
 	
-	virtual const std::string& GetName() const noexcept { return "Object"; }
+	// for now we can't save projects so they all have id 0, this will change
+	IObject() : m_id(std::rand() % 100) {}
 
-	virtual IObject* CastToObject() noexcept			{ return dynamic_cast<IObject*>(this); }
+	virtual ~IObject() = default;
+
+	virtual const std::string GetObjectName() const noexcept { return "Object"; }
+
+	virtual IObject* CastToObject() noexcept { return dynamic_cast<IObject*>(this); }
+
+	const ID GetID() const { return m_id; }
 
 	virtual std::string GetLog() = 0;
+
+protected:
+	int m_id;
 };
 
 // syntactic sugar around common types of object wrappers

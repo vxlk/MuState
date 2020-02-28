@@ -32,8 +32,8 @@ MainComponent::MainComponent()
 	loadPluginButton->setTopLeftPosition({ 200, 200 });
 	loadPluginButton->setBounds(10, 70, 90, 20);
 	loadPluginButton->onClick = [&, this]() {
-		//m_pEngine.AddObject(new PluginTool());
-	}
+		m_pEngine.AddObject(new PluginTool("C:\\Users\\small\\Desktop\\vsts\\Serum_x64.dll"));
+	};
 	loadPluginButton->addListener(this);
 	addAndMakeVisible(loadPluginButton.get());
 

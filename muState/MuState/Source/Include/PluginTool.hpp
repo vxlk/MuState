@@ -1,20 +1,49 @@
 #pragma once
 
 #include <Tool.hpp>
+// set include path to include tracktion, include plugin.h
+// get rid of this garbage you cant use it
 #include <../JuceLibraryCode/JuceHeader.h>
 
 // Implementation of a tool - specifically wrapping a plugin instance
 // this plugin can be of type generator or effect, the engine does not care
 
-class PluginTool : public Tool, public juce::AudioProcessor {
+class PluginTool : public Tool {
+public:
 	//==============================================================================
-	PluginTool();
+	PluginTool() = delete;
+	// I want this behavior, send it a file path and load the tool as 
+	// a plugin - it should be able to figure all of the micro details out
+	// itself
+	PluginTool(std::string filePath);
+	~PluginTool() override = default;
+
+	// IObject override
+	// rename to GetObjectName to avoid ambiguity
+	// get rid of reference for performance
+	virtual const std::string GetObjectName() const noexcept override
+	{
+		return "Plugin Tool";
+	}
+	virtual std::string GetLog() override { return ""; }
+
+	//==============================================================================
+
+private:
+	void PrivateSetup();
+};
+
+/*
+class PluginTool : public Tool, public juce::AudioProcessor {
+public:
+	//==============================================================================
+	PluginTool() = default;
 	~PluginTool() override = default;
 
 	// IObject override
 	virtual const std::string& GetName() const noexcept override 
 							   { return static_cast<const char *>(plugin->getName().toUTF8()); }
-	virtual std::string GetLog() override;
+	virtual std::string GetLog() override { return ""; }
 
 	PluginTool(AudioPluginInstance* processorToUse)
 		: AudioProcessor(getBusesPropertiesFromProcessor(processorToUse)),
@@ -165,3 +194,4 @@ AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
 		return nullptr;
 }
+*/

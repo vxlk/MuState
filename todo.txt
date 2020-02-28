@@ -1,0 +1,10 @@
+using juce's plugin host will not work
+need to use tracktion's plugin class to derive external / internal plugins
+
+object
+|
+tool
+|
+plugintool : tracktion::plugin
+|
+externalPluginTool, internalPluginTool

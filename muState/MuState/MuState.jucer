@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="cLMWCh" name="MuState" projectType="guiapp" jucerVersion="5.4.4"
-              cppLanguageStandard="17" headerPath="C:\Users\small\Desktop\muState\muState\MuState\Source\Include;&#10;C:\Users\small\Desktop\muState\Thirdparty\tracktion_engine\modules\tracktion_engine;&#10;C:\Users\small\Desktop\mustate\MuState\muState\MuState\Source\Include;&#10;"
+<JUCERPROJECT id="cLMWCh" name="MuState" projectType="guiapp" jucerVersion="5.4.7"
+              cppLanguageStandard="17" headerPath="C:\Users\small\Desktop\muState\muState\MuState\Source\Include;&#10;C:\Users\small\Desktop\mustate\MuState\Thirdparty\tracktion_engine\modules\tracktion_engine;&#10;C:\Users\small\Desktop\mustate\MuState\muState\MuState\Source\Include;&#10;"
               userNotes="you will have to set your own paths&#10;todo: find relative path for header search"
               bundleIdentifier="muState.alpha">
   <MAINGROUP id="HskP4I" name="MuState">
@@ -14,10 +14,16 @@
           <FILE id="y6Rvg1" name="ITool.hpp" compile="0" resource="0" file="Source/Include/Interfaces/ITool.hpp"/>
         </GROUP>
         <FILE id="eAAXPH" name="Engine.hpp" compile="0" resource="0" file="Source/Include/Engine.hpp"/>
+        <FILE id="bg8bL0" name="ExecutiveController.hpp" compile="0" resource="0"
+              file="Source/Include/ExecutiveController.hpp"/>
         <FILE id="zQiw52" name="Frame.hpp" compile="0" resource="0" file="Source/Include/Frame.hpp"/>
+        <FILE id="mS6g9P" name="Param.hpp" compile="0" resource="0" file="Source/Include/Param.hpp"/>
+        <FILE id="yNrkhh" name="PluginTool.hpp" compile="0" resource="0" file="Source/Include/PluginTool.hpp"/>
         <FILE id="UQV6KZ" name="Tool.hpp" compile="0" resource="0" file="Source/Include/Tool.hpp"/>
       </GROUP>
-      <GROUP id="{6B090B2B-E2B3-BA1C-06F5-C11BB179A895}" name="Src"/>
+      <GROUP id="{6B090B2B-E2B3-BA1C-06F5-C11BB179A895}" name="Src">
+        <FILE id="mcTQPN" name="PluginTool.cpp" compile="1" resource="0" file="Source/Src/PluginTool.cpp"/>
+      </GROUP>
       <FILE id="kff6Tc" name="MainComponent.hpp" compile="0" resource="0"
             file="Source/MainComponent.hpp"/>
       <FILE id="TVpz7I" name="MainComponent.cpp" compile="1" resource="0"
@@ -45,6 +51,9 @@
         <MODULEPATH id="juce_gui_basics" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
         <MODULEPATH id="juce_opengl" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="tracktion_engine" path="../../Thirdparty/tracktion_engine/modules"/>
+        <MODULEPATH id="juce_dsp" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
+        <MODULEPATH id="juce_osc" path="../../Thirdparty/tracktion_engine/modules/juce/modules"/>
       </MODULEPATHS>
     </VS2019>
   </EXPORTFORMATS>
@@ -57,11 +66,14 @@
     <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_dsp" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
     <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="juce_osc" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
+    <MODULE id="tracktion_engine" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
   </MODULES>
   <LIVE_SETTINGS>
     <WINDOWS/>

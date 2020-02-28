@@ -12,7 +12,7 @@
 
 #include <Frame.hpp>
 #include <Interfaces/IObject.hpp>
-
+#include <Param.hpp>
 #include <unordered_map>
 
 // The State Interface
@@ -49,10 +49,17 @@
 
 class IState : public IObject {
 public:
-	virtual bool   CanTransition()  = 0;
-	virtual void   Transition()		= 0;
+	objectPtrMutable_t       GetStateMutable() { return shared_from_this(); }
+	objectPtr_t				 GetState()		   { return shared_from_this(); }
+	virtual bool			 CanTransition() = 0;
+	virtual void			 Transition()	 = 0;
+
+	//IObject override
+	virtual const std::string GetObjectName() const noexcept override { return "State"; }
+	virtual std::string GetLog() override { return ""; }
 };
 
+using stateList_t = std::vector<std::shared_ptr<const IState>>;
 // should move these to an implementation file
 
 // the different ways a state can be compared to one another
@@ -65,19 +72,30 @@ class StateLikenessComparators {
 	Frame m_frameToCompareAgainst;
 };
 
+// move this out of istate you slop bag
 class State : public IState {
 protected:
 	bool m_bInTransition;
+	// a state knows about its previous states
+	stateList_t m_listOfPreviousStates{};
+	paramList_t m_listOfParams{};
 	std::vector<Frame> m_Frames;
+
 public:
 
 	friend class StateOperators;
 
+	// Executive Controller Updates state with an alloted edit
+	State() 
+			: m_bInTransition(false),
+			  m_Frames{}
+			  {}
+
 	virtual bool   CanTransition() override;
 	virtual void   Transition()    override;
-
+	// return the juce value tree of this state
+	//virtual const ValueTree& GetTree() const override { return m_StateTree; }
 	constexpr bool IsInTransition() noexcept { return m_bInTransition; }
 };
 
-using stateList_t = std::vector<std::shared_ptr<const IState>>;
-using stateMap_t = std::unordered_map<std::shared_ptr<const IState>>;
+//using stateMap_t = std::unordered_map<std::shared_ptr<const IState>>;
