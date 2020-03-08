@@ -18,7 +18,10 @@
 class Tool : public ITool {
 public:
 	Tool() = delete;
-	Tool(IState* toolState);
+	// set up state with this constructor, then
+	// children handle additional details (if its a plugin,
+	// audio file etc - there will be extra setup
+	Tool(IState* toolState) {}
 	//IObject override
 	virtual const std::string GetObjectName() const noexcept override { return "Generic Tool"; }
 	virtual std::string GetLog() override { return ""; }

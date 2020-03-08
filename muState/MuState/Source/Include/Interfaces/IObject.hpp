@@ -13,6 +13,7 @@
 #include <string>
 #include <memory>
 #include <vector>
+
 //#include <tracktion_engine/project/tracktion_ProjectItemID.h>
 
 // silence error, we dont care about adding to the global header
@@ -41,7 +42,9 @@ class IObject : public std::enable_shared_from_this<IObject> {
 public:
 	
 	// for now we can't save projects so they all have id 0, this will change
-	IObject() : m_id(std::rand() % 100) {}
+	IObject() : m_id(std::rand() % 100) {
+		//ExcController().RegisterObject(m_id);
+	}
 
 	virtual ~IObject() = default;
 

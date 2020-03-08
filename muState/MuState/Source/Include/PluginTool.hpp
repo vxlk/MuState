@@ -31,6 +31,7 @@ public:
 
 private:
 	void PrivateSetup();
+	// somehow manage its own format..
 };
 
 /*
